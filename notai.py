@@ -4,15 +4,22 @@ from mss import mss
 from pynput.mouse import Controller
 import ctypes
 import time
+import random
 
 mouse = Controller()
-
 sct = mss()
 
 def click():
+    time.sleep(0.03) #for legit idk 
+    randomcatgirl = random.choice([True, False])
+    
     ctypes.windll.user32.mouse_event(2, 0, 0, 0, 0)  
-    time.sleep(0.01)  
     ctypes.windll.user32.mouse_event(4, 0, 0, 0, 0)  
+    
+    if randomcatgirl:
+        ctypes.windll.user32.mouse_event(2, 0, 0, 0, 0)  
+        ctypes.windll.user32.mouse_event(4, 0, 0, 0, 0)  
+
 
 def meowmeow():
     while True:
